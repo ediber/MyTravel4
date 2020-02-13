@@ -29,27 +29,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        addDestination = findViewById(R.id.add_destination);
+        addDestination = findViewById(R.id.add_destination);// יצירת לחצן של הוסםת יעד
 
         addDestination.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                new AlertDialog.Builder(MapsActivity.this)
+            public void onClick(View v) {//פעולה בעת הלחיצה
+                new AlertDialog.Builder(MapsActivity.this)// הופעת ההודעה האם לבחור ביעד שטיילתי או מתוכנן
                         .setTitle("add destination")
                         .setMessage("do you want to add a new or an old destination ?")
 
                         // Specifying a listener allows you to take an action before dismissing the dialog.
                         // The dialog is automatically dismissed when a dialog button is clicked.
-                        .setPositiveButton("new", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("new", new DialogInterface.OnClickListener() {//לחצן היעד החדש
                             public void onClick(DialogInterface dialog, int which) {
-                                Intent intent = new Intent(MapsActivity.this, NewDestinationActivity.class);
+                                Intent intent = new Intent(MapsActivity.this, NewDestinationActivity.class); //נפתח מסך של יעד חדש
                                 startActivity(intent);
 
                             }
                         })
 
                         // A null listener allows the button to dismiss the dialog and take no further action.
-                        .setNegativeButton("old", new DialogInterface.OnClickListener() {
+                        .setNegativeButton("old", new DialogInterface.OnClickListener() {// לחצן היעד הישן
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
