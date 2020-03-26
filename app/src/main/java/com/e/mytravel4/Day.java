@@ -1,16 +1,26 @@
 package com.e.mytravel4;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
-public class Day {
+import java.io.ByteArrayOutputStream;
+
+import io.realm.RealmObject;
+
+public class Day extends RealmObject {
     private String details1;
     private String details2;
-    private Bitmap image;
+ //   private Bitmap image;
+ //   private byte[] imageBytes;
+
+    public Day() {
+
+    }
 
     public Day(String details1, String details2, Bitmap image) {
         this.details1 = details1;
         this.details2 = details2;
-        this.image = image;
+   //     this.imageBytes = bitmapToByteArray(image);
     }
 
     public String getDetails1() {
@@ -29,11 +39,25 @@ public class Day {
         this.details2 = details2;
     }
 
-    public Bitmap getImage() {
-        return image;
+/*    public Bitmap getImage() {
+        return byteArrayToBitmap(imageBytes);
     }
 
     public void setImage(Bitmap image) {
-        this.image = image;
+        this.imageBytes = bitmapToByteArray(image);
+    }*/
+
+    private byte[] bitmapToByteArray(Bitmap bmp){
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+
+        return byteArray;
     }
+
+    private Bitmap byteArrayToBitmap(byte[] bitmapdata){
+        Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length);
+        return bitmap;
+    }
+
 }
