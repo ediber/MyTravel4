@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_dest_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NewDestinationActivity">
@@ -10,7 +11,7 @@
         android:id="@+id/new_dest_search_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="16dp"
         android:text="search"
         app:layout_constraintStart_toEndOf="@+id/new_dest_search_edit"
         app:layout_constraintTop_toTopOf="@+id/new_dest_search_edit" />
@@ -19,7 +20,7 @@
         android:id="@+id/new_dest_search_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -30,7 +31,7 @@
         android:id="@+id/new_dest_search_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="aaaaaaaaaaaa"
+        android:text="loccatin"
         app:layout_constraintStart_toStartOf="@+id/new_dest_search_edit"
         app:layout_constraintTop_toBottomOf="@+id/new_dest_search_edit" />
 
@@ -46,17 +47,17 @@
         android:id="@+id/new_dest_date_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="TextView"
+        android:layout_marginTop="20dp"
+        android:text="date"
         app:layout_constraintStart_toStartOf="@+id/new_dest_search_text"
-        app:layout_constraintTop_toBottomOf="@+id/new_dest_search_edit" />
+        app:layout_constraintTop_toBottomOf="@+id/new_dest_search_text" />
 
     <Button
         android:id="@+id/new_dest_add_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="30dp"
         android:text="add_day"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_dest_details" />
@@ -74,7 +75,7 @@
         android:id="@+id/new_dest_prev_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:text="prev_day"
         app:layout_constraintStart_toEndOf="@+id/new_dest_next_day"
         app:layout_constraintTop_toTopOf="@+id/new_dest_next_day" />
@@ -83,8 +84,8 @@
         android:id="@+id/new_dest_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="24dp"
         android:text="save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -102,20 +103,22 @@
         android:id="@+id/new_dest_planing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="enter your plans"
         android:inputType="textMultiLine"
-        app:layout_constraintStart_toStartOf="@+id/new_dest_date_text"
-        app:layout_constraintTop_toBottomOf="@+id/new_dest_date_text" />
+        app:layout_constraintStart_toStartOf="@+id/new_dest_image"
+        app:layout_constraintTop_toBottomOf="@+id/new_dest_image" />
 
     <EditText
         android:id="@+id/new_dest_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="enter your details"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="@+id/new_dest_planing"
         app:layout_constraintTop_toBottomOf="@+id/new_dest_planing" />
@@ -126,6 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:text="day 1"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/new_dest_title"
         app:layout_constraintTop_toTopOf="@+id/new_dest_title" />
 
@@ -136,8 +140,42 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/new_dest_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintStart_toStartOf="@+id/new_dest_date_text"
+        app:layout_constraintTop_toBottomOf="@+id/new_dest_date_text" />
+
+    <Button
+        android:id="@+id/new_dest_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="select image"
+        app:layout_constraintStart_toStartOf="@+id/new_dest_date_button"
+        app:layout_constraintTop_toTopOf="@+id/new_dest_image" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="plans"
+        app:layout_constraintStart_toStartOf="@+id/new_dest_image_button"
+        app:layout_constraintTop_toTopOf="@+id/new_dest_planing" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="details"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/new_dest_details" />
 
     <!--    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/new_dest_recycler"

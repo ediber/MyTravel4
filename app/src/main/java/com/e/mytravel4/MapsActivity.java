@@ -123,13 +123,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
             MarkerOptions marker;
+            String locality = destination.getAddress(getApplicationContext()).getLocality();
+            if(locality == null){
+                locality = "";
+            }
             if (type.equals(NEW_DESTINATION)) {
                 marker = new MarkerOptions().position(latLng).
-                        title(destination.getAddress(getApplicationContext()).getLocality() + " " + type)
+                        title(locality + " " + type)
                         .icon(icon);
             } else {
                 marker = new MarkerOptions().position(latLng).
-                        title(destination.getAddress(getApplicationContext()).getLocality() + " " + type);
+                        title(locality + " " + type);
             }
 
             mMap.addMarker(marker);
